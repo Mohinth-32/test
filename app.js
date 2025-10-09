@@ -9,9 +9,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.get('/',(req,res)=>{
-    document.body.innerHTML = '<h1>Server is running</h1>'
-})
+
 app.get('/getAllData', async (req, res) => {
     try {
         const [rows] = await pool.query(`SELECT * FROM ${process.env.TABLE_NAME};`); // replace 'your_table_name' with your actual table name
