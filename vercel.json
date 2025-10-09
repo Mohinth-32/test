@@ -5,10 +5,9 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline';"
+          "value": "default-src 'self'; img-src 'self' data: blob: https://test-three-topaz-91.vercel.app; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self' data:;"
         }
       ]
     }
   ]
 }
-
