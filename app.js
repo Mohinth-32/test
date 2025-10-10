@@ -9,7 +9,24 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>server's up</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h2>✅ server is up and running<h2/>
+</body>
+</html>
+  `);
+});
+
 
 app.get('/getAllData', async (req, res) => {
     try {
